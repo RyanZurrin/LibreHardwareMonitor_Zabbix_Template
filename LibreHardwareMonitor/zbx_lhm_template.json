@@ -1,0 +1,3554 @@
+{
+    "zabbix_export": {
+        "version": "6.4",
+        "template_groups": [
+            {
+                "uuid": "846977d1dfed4968bc5f8bdb363285bc",
+                "name": "Templates/Operating systems"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "80a7df6f932741fc80dff3ca55b6ea3a",
+                "template": "Zabbix LibreHardwareMonitor For WIndows Agent",
+                "name": "Zabbix LibreHardwareMonitor For WIndows Agent",
+                "description": "Template containing items for collecting data from LibreHardwareMonitor which needs to be installed and running on the windows machine with an active zabbix agent2.",
+                "groups": [
+                    {
+                        "name": "Templates/Operating systems"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "82273861936a45379c8f00af34d84aac",
+                        "name": "WMI Intel Core i7-9750H CPU Memory Power",
+                        "key": "wmi.get[/Root/LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' AND name='CPU Memory'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "CPU Memory: Power used by the memory controller within the CPU.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2e4b0c6feb0a45e09633c7a9ff835d3c",
+                        "name": "WMI Data Intel(R) UHD Graphics 630 Data D3D Shared Memory Used",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE Name='D3D Shared Memory Used' and Index='0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MB",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of Intel(R) UHD Graphics 630 D3D Shared Memory Used in MB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ac143936e8e24012ad3e23e118b5ae52",
+                        "name": "WMI Data NVIDIA GPU D3D Dedicated Memory Used",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE Parent='/gpu-nvidia/0' AND Name='D3D Dedicated Memory Used'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MB",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of NVIDIA GPU D3D Dedicated Memory Used in MB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d35096c64d7e4e00b71915706e45b1e2",
+                        "name": "WMI Data NVIDIA GPU D3D Shared Memory Used",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE Parent='/gpu-nvidia/0' AND Name='D3D Shared Memory Used'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MB",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of NVIDIA GPU D3D Shared Memory Used in MB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "35f9612455d3484f810e1c252fa9f248",
+                        "name": "WMI Data NVIDIA GPU Memory Free",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE Parent='/gpu-nvidia/0' AND Name='GPU Memory Free'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MB",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of NVIDIA GPU Memmory Free in MB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "6a47e7683ae94c61a23b528a99258e4b",
+                        "name": "WMI Data NVIDIA GPU Memory Used",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE Parent='/gpu-nvidia/0' AND Name='GPU Memory Used'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MB",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of NVIDIA GPU Memmory Used in MB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0be70835ae7b4864b3c27d6489912a24",
+                        "name": "WMI Clock Bus Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='Bus Speed'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Bus Speed: The speed of the front-side bus, which connects the CPU to the main memory.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "bb6fa238e5e94be799af535852558c55",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #1 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "8b1d0d9c2a8a4c5fa765d37213f65171",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #2 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "067eb16a9199427d9dcfba57047dab79",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #3 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #3'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ae74ead9a9774fc0a7667f93179f5d2b",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #4 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #4'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c3839f28ff374c089895fa430286764f",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #5 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #5'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a704a29f244b4331a0345350c9f5f6fd",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #6 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #6'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ce7fbde1293143119f704c393ef012b4",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #7 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #7'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "59c73f466676464598df21b89bd94271",
+                        "name": "WMI AMD Ryzen 7 6800H  Core #8 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' and Name='Core #8'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Core #X: Operating frequency of each CPU core, which can scale up or down based on workload.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b6d91c789c7c49f48544bbc411f73f4f",
+                        "name": "WMI Intel Core i7-9750H CPU Core #1 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='CPU Core #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "CPU Core #X: Clock speed of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "10cb761ce1e94b26b229e01ca9c699a3",
+                        "name": "WMI Intel Core i7-9750H CPU Core #2 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='CPU Core #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "CPU Core #X: Clock speed of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "e23145bd3b364659ab5c04a080ffceb9",
+                        "name": "WMI Intel Core i7-9750H CPU Core #3 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='CPU Core #3'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "CPU Core #X: Clock speed of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d240cd5b66704537b167df6eb6273c0b",
+                        "name": "WMI Intel Core i7-9750H CPU Core #4 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='CPU Core #4'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "CPU Core #X: Clock speed of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "32bbba47935740fd8b617a435dc6f8e8",
+                        "name": "WMI  Intel Core i7-9750H CPU Core #5 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='CPU Core #5'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "CPU Core #X: Clock speed of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "bab61fd10e3049e98fe9f922adbb08bc",
+                        "name": "WMI Intel Core i7-9750H CPU Core #6 Clock Speed",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='CPU Core #6'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "CPU Core #X: Clock speed of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f84f59507c2a41149b0db1d3c6069471",
+                        "name": "WMI Clocks NVIDIA GPU Core",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='GPU Core'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Collects data from LibreHardwareMonitor for Clock speed of GPU Core in MHz.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "14cf4c7bdee347568d10ea7e3eb6e8d1",
+                        "name": "WMI Clocks NVIDIA GPU Memory",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Clock' AND name='GPU Memory'\"]",
+                        "value_type": "FLOAT",
+                        "units": "MHz",
+                        "description": "Collects data from LibreHardwareMonitor for Clock speed of GPU Memory in MHz.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2e8d91e5be524f02948ed6323c590654",
+                        "name": "WMI Data Memory Available",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Data' AND name='Memory Available'\"]",
+                        "value_type": "FLOAT",
+                        "units": "GB",
+                        "description": "Collects data from LibreHardwareMonitor for Data Memory Available in GB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "81821d21f9814bdaa45021998f4de441",
+                        "name": "WMI Data Memory Used",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Data' AND name='Memory Used'\"]",
+                        "value_type": "FLOAT",
+                        "units": "GB",
+                        "description": "Collects data from LibreHardwareMonitor for Data Memory Used in GB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f835f1f54336407a98a820d06dbb5dfc",
+                        "name": "WMI Data Virtual Memory Available",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Data' AND name='Virtual Memory Available'\"]",
+                        "value_type": "FLOAT",
+                        "units": "GB",
+                        "description": "Collects data from LibreHardwareMonitor for Data Virtual Memory Available in GB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a85c077282bf4a739895452c4458e6ba",
+                        "name": "WMI Data Virtual Memory Used",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Data' AND name='Virtual Memory Used'\"]",
+                        "value_type": "FLOAT",
+                        "units": "GB",
+                        "description": "Collects data from LibreHardwareMonitor for Data Virtual Memory Used in GB.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "096a540d6cef47e68b118dcc1e783c60",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #1'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5cf9194c614e4a5b8ecf4413e0a389dc",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #2'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d89b25aa5bd74861a3778ea3eeb11243",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #3",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #3'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "4de3eb4f9d034d0aae97077b2890f207",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #4",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #4'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "9d8e078fd50d43449f298c7bfd131662",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #5",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #5'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "6f83210b07af499883dd7808a1d80150",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #6",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #6'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "63c98186fac84982b66d73f95d7cf596",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #7",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #7'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d2686d7fd665445cb50e0e88abc97245",
+                        "name": "WMI AMD Ryzen 7 6800H Factors Core #8",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value From Sensor Where SensorType='Factor' and name='Core #8'\"]",
+                        "value_type": "FLOAT",
+                        "description": "The \"Factors\" section in your hardware monitoring data likely refers to a multiplier used to determine the actual operating frequency of each CPU core. The figures given (e.g., 21.167, 45.750, 47.500) are typically multipliers that, when applied to the base clock speed (bus speed), give the effective frequency of each core.\n\nExample:\n\n    Base Clock Speed: Let\u2019s say it's 100 MHz (common base for simplification).\n    Multiplier (Factor): For Core #1, if it's 47.500,\n    Effective Frequency: 100 MHz \u00d7 47.500 = 4750 MHz or 4.75 GHz\n\nThis multiplier changes dynamically based on workload demands to adjust the processor's speed within its power, thermal, and performance limits. It's part of what's known as \"dynamic frequency scaling\" or \"CPU throttling,\" where the processor adjusts its speed to optimize performance and energy usage.\n\nThe data you provided for each core likely shows a range of multipliers that the processor has applied over a given period or under specific conditions:\n\n    The first value (e.g., 21.167) might be the minimum multiplier used when the demand is low.\n    The middle value (e.g., 45.750 or 46.000) might be a typical operational multiplier under normal to high load.\n    The last value (47.500) could be the maximum multiplier, possibly under conditions of maximum performance demand or turbo boost.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "fe69be80dee1416bb7f9a59dff9c25e9",
+                        "name": "WMI Load CPU Core #1 Thread #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #1 Thread #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #1 Thread #1 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2647b129bb1d47f69a897350bffe32c2",
+                        "name": "WMI Load CPU Core #1 Thread #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #1 Thread #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #1 Thread #2 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "03b080e1ebd04b55bfa522f6f8d78b52",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "fb64d2a744414466ab037d0545928b81",
+                        "name": "WMI Load CPU Core #2 Thread #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #2 Thread #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #2 Thread #1 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "e67e9d9b013e4b7ab8e0b6c203cb7603",
+                        "name": "WMI Load CPU Core #2 Thread #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #2 Thread #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #2 Thread #2 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2bee583aebc745c98efa8ee03dcf0f11",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "37705fb878224d348aaf22d4a529f3fa",
+                        "name": "WMI Load CPU Core #3 Thread #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #3 Thread #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #3 Thread #1 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "784db5d2740b4bae9ffbe2a0a3f13319",
+                        "name": "WMI Load CPU Core #3 Thread #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #3 Thread #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #3 Thread #2 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a265699650e44dfab3759a069f01af97",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #3",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #3'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "be2906220b3549aea9168db0840ee0e5",
+                        "name": "WMI Load CPU Core #4 Thread #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #4 Thread #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #4 Thread #1 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a1ed42602b4f42d9825b9f60c79fe507",
+                        "name": "WMI Load CPU Core #4 Thread #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #4 Thread #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #4 Thread #2 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "23c1be83aacb4cec943619dc62caf8e4",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #4",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #4'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d8f5f8a1acb9407e955ad33e18f1f206",
+                        "name": "WMI Load CPU Core #5 Thread #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #5 Thread #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #5 Thread #1 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c4b5bb0be27e4638abb8dff99a2a85c4",
+                        "name": "WMI Load CPU Core #5 Thread #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #5 Thread #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #5 Thread #2 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "067d6619c6dc4855a9f03a1a5ed4da7e",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #5",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #5'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5d3c80f3e10f48feb1e938b5b88b3b57",
+                        "name": "WMI Load CPU Core #6 Thread #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #6 Thread #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #6 Thread #1 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "34fb02d0cc504d6fafaf173ecf7af099",
+                        "name": "WMI Load CPU Core #6 Thread #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core #6 Thread #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Load of CPU Core #6 Thread #2 in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "1e1f86dbe9d14a0e9b63b48386aa7e73",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #6",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #6'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a87aeafaf2734b76a66142105fba6714",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #7",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #7'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "8e576d9119834491a6e43c745bd770cc",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #8",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #8'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "3e7f0b58d0914acf992dd523691eeb56",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #9",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #9'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a546b83bcd474e03844ffde1013ec387",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #10",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #10'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "61a616ab728448269673a45e48d6118f",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #11",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #11'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "69f7b41fc44e44e7a8be22f086bdd58f",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #12",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #12'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ad0d6140c3ae41d8b520edee6ab2417e",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #13",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #13'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "179db9873a3a4976a9674223042ac962",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #14",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #14'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d40027f0c8d644679f39b59ff392afcc",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #15",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #15'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "67f27aa874be4351b9dfa5fca9761b03",
+                        "name": "WMI AMD Ryzen 7 6800H Load CPU Core #16",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='load' and Name='CPU Core #16'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "CPU Core #X: Usage percentage for the maximum loaded core and each core, respectively.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "43e1b874985d4a658a4295b7899728ae",
+                        "name": "WMI Load CPU Core Max",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Core Max'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor on Load for CPU Core Max in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7761c94fdf2c47bb812bcad7b0b29b1d",
+                        "name": "WMI Load CPU Total",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='CPU Total'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Load Total in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ce041b6a53b244448fde8261b60d6473",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D 3D",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D 3D' and Index='0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D 3D in %.\n\nD3D 3D: This measures the percentage of GPU resources being used for rendering 3D graphics. A low or zero value indicates minimal or no 3D processing activity",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c5be70033acd4b1d9d55eea87607e274",
+                        "name": "WMI Load NVIDIA GPU D3D 3D",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D 3D' and Index='4'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU D3D 3D in %.\n\nThis measures the percentage of GPU resources being used for rendering 3D graphics. A low or zero value indicates minimal or no 3D processing activity.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "46ee178a08f34b68b1d8893b86c3eb61",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D Copy",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Copy' and Index='1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D 3D in %.\n\nD3D Copy: These entries likely represent different contexts in which the GPU is used for copying operations\u2014transferring data between different parts of memory. It's possible to have multiple copy engines on modern GPUs, which can handle tasks simultaneously without impacting 3D rendering performance.low or zero value indicates minimal or no 3D processing activity.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "8895752d17ef4f38bb9bf8bd424821fa",
+                        "name": "WMI Load NVIDIA GPU D3D COPY Engine #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Copy' and Index='5'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Copy #1 in %.\n\nThese entries represent different contexts in which the GPU is used for copying operations\u2014transferring data between different parts of memory. It's possible to have multiple copy engines on modern GPUs, which can handle tasks simultaneously without impacting 3D rendering performance.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d9ab0602aa4a477b8e37826bc8de30c8",
+                        "name": "WMI Load NVIDIA GPU D3D COPY Engine #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Copy' and Index='6'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Copy #2 in %.\n\nThese entries represent different contexts in which the GPU is used for copying operations\u2014transferring data between different parts of memory. It's possible to have multiple copy engines on modern GPUs, which can handle tasks simultaneously without impacting 3D rendering performance.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "dbe731e0f2a04a72a9173277f196ecdb",
+                        "name": "WMI Load NVIDIA GPU D3D COPY Engine #3",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Copy' and Index='7'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Copy #3 in %.\n\nThese entries represent different contexts in which the GPU is used for copying operations\u2014transferring data between different parts of memory. It's possible to have multiple copy engines on modern GPUs, which can handle tasks simultaneously without impacting 3D rendering performance.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0a7e97996fb74f11a7cba0e02e3b971f",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D Render",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D GDI Render'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D 3D in %.\n\nD3D GDI Render: Refers to the use of the GPU for Graphics Device Interface (GDI) rendering tasks. GDI is an old graphics interface used by Windows for representing graphical objects and transmitting them to output devices like monitors. GDI rendering on the GPU might be utilized for older applications or specific graphical tasks that rely on GDI instead of more modern APIs like DirectX or Vulkan.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a58407baa2dc4e0cb234eee61c2e014a",
+                        "name": "WMI Load NVIDIA GPU D3D Overlay",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Overlay' and Parent='/gpu-nvidia/0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Overlay in %.\n\nD3D Overlay: This involves the usage of GPU resources for overlay processing, such as rendering graphical user interfaces or video overlays on top of other content.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d281048dc59140ecb1cd23c728487cf7",
+                        "name": "WMI Load NVIDIA GPU D3D Security",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Security' and Parent='/gpu-nvidia/0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Security in %.\n\nD3D Security: This metric might be related to operations that secure the content being processed or transmitted by the GPU, such as DRM-related activities to protect video content.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2bfb8cb304aa49149aa8314b79ed5a82",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D Video Decode #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Video Decode' and Index='9'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D Video Decode in %.\n\nD3D Video Decode: Indicates how much of the GPU is being used to decode video streams. Zero percent suggests that no video decoding is happening on the GPU at that moment.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "12c6778502044a16ae77947d234aa5f8",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D Video Decode #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Video Decode' and Index='10'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D Video Decode #2 in %.\n\nD3D Video Decode: Indicates how much of the GPU is being used to decode video streams. Zero percent suggests that no video decoding is happening on the GPU at that moment.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2002f60a38dd4e22a2433689d428f257",
+                        "name": "WMI Load NVIDIA GPU D3D Video Decode",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Video Decode' and Parent='/gpu-nvidia/0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Video Decode in %.\n\nD3D Video Decode: Indicates how much of the GPU is being used to decode video streams. Zero percent suggests that no video decoding is happening on the GPU at that moment.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "918966c1131a4a3880134ac517d445e8",
+                        "name": "WMI Load NVIDIA GPU D3D Video Encode",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Video Encode' and Parent='/gpu-nvidia/0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Video Encode in %.\n\nD3D Video Encode: Similar to video decode but for encoding video. This would be active when the GPU is used to encode video streams into a particular format.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d1aac1846f594b3fb2945cc2e6f9c12d",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D Video Processing #1",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Video Processing' and Index='11'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D Video Processing #1 in %.\n\nD3D Video Processing: This load indicates the utilization of the GPU for video processing tasks other than decode and encode. This could include color conversion, scaling, or other post-processing effects applied to video before it is displayed or further processed.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "e1360efdabd44966bfceea23d130883f",
+                        "name": "WMI Load Intel(R) UHD Graphics 630 D3D Video Processing #2",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D Video Processing' and Index='12'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of Intel(R) UHD Graphics 630 D3D Video Processing #2 in %.\n\nD3D Video Processing: This load indicates the utilization of the GPU for video processing tasks other than decode and encode. This could include color conversion, scaling, or other post-processing effects applied to video before it is displayed or further processed.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "e008f82c52a843f19c288768d5cfb0a0",
+                        "name": "WMI Load NVIDIA GPU D3D VR",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='D3D VR' and Parent='/gpu-nvidia/0'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of NVIDIA GPU  D3D Video Decode in %.\n\nD3D VR: Stands for the load related to Virtual Reality (VR) applications. If VR content is being rendered, this would show how much of the GPU's resources are dedicated to that task.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c1d5110697354feb9df26922276e3afd",
+                        "name": "WMI Load NVIDIA GPU Bus",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='GPU Bus'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of GPU Bus in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d95e8d43a6e7418690e48832535e83bb",
+                        "name": "WMI Load NVIDIA GPU Core",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='GPU Core'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of GPU Core in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cca7d071b2e5494ba303d861bff839df",
+                        "name": "WMI Load NVIDIA GPU Memory",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='GPU Memory'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of GPU Memory in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a5e176576daa4636b1034119d5b144c0",
+                        "name": "WMI Load NVIDIA GPU Memory Controller",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='GPU Memory Controller'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of GPU Memory Controller in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "be01b2e341fc4af4bcb46fbd048c0324",
+                        "name": "WMI Load NVIDIA GPU Video Engine",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='GPU Video Engine'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for the Load of GPU Video Engine in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "841ba3a834a542de8a244defab3d02a0",
+                        "name": "WMI Load Memory",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='Memory'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Memory Load in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "597cee830c984ef78cafd6feff6f313a",
+                        "name": "WMI Load Virtual Memory",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Load' AND name='Virtual Memory'\"]",
+                        "value_type": "FLOAT",
+                        "units": "%",
+                        "description": "Collects data from LibreHardwareMonitor for Virtual Memory Load in %.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "702d584fcd294a7dbe62f6068fdca4dc",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #1 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #1 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0d3d25b2329d40f7a561895857f6e8c2",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #2 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #2 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f136238544854c6aa3c5bb28c9dc2caa",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #3 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #3 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "39f403110ec1456e9d27fdf95808ae1b",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #4 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #4 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b3ddf1f5fc9d40e68be23d0014b33b4a",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #5 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #5 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c04792f95faf48a0abb88ad6a281c179",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #6 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #6 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "302277002f9d45aabfbfb9063088089b",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #7 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #7 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "bf51ff84ba904291941af993d16232cd",
+                        "name": "WMI AMD Ryzen 7 6800H Power Core #8 (SMU)",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Core #8 (SMU)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Core #X (SMU): Power usage of each individual CPU core.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a56243b5b18c44aaaf79a5afefd1ba34",
+                        "name": "WMI Intel Core i7-9750H Power CPU Cores",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' AND name='CPU Cores'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "CPU Cores: Power used by the CPU cores alone.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7437846d6b61472c9f470d9f01d601bb",
+                        "name": "WMI Intel Core i7-9750H CPU Package Power",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' AND name='CPU Package'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "CPU Package: The total power usage of the entire CPU.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d85363eb10b74684a79c4299a992e7f3",
+                        "name": "WMI Power NVIDIA GPU Package",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' AND name='GPU Package'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Collects data from LibreHardwareMonitor for Power of GPU Package in Watts.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "092e36dd38094e76b10e2c7aee9d961f",
+                        "name": "WMI Power Intel(R) UHD Graphics 630 GPU Power",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' AND name='GPU Power'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Collects data from LibreHardwareMonitor on the integated Intel(R) UHD Graphics 630 GPU Power in Watts.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "3e6c0ee8e298413695ad4598e34fb3a5",
+                        "name": "WMI AMD Ryzen 7 6800H Power Package",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Power' and Name='Package'\"]",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "description": "Package: The total power consumption of the CPU.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "19e2847dd6f94a1fb46cea45fb0886f4",
+                        "name": "WMI Intel Core i7-9750H Core Average Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='Core Average'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Core Average: Average temperature across all cores.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "beb49c6427074370b288f9fcf647caab",
+                        "name": "WMI Intel Core i7-9750H Core Max Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='Core Max'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on Core Max Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7f2a0da1d6204163809d14734134fa62",
+                        "name": "WMI Intel Core i7-9750H CPU Core #1 Distance to TjMax Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #1 Distance to TjMax'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #1 Distance to TjMax Temp in \u00b0F. \n\nTjMax: This is the maximum safe thermal junction temperature specified by the manufacturer. If the CPU's temperature reaches this value, the CPU will typically begin thermal throttling to prevent damage, by reducing power consumption and therefore its heat output. This may involve lowering the CPU frequency, reducing voltage, or even shutting down the system in extreme cases to prevent overheating.\n\nDistance to TjMax: This value indicates how close the CPU core is to reaching its TjMax. It's essentially a buffer or headroom until the CPU reaches its thermal limit. For example, if the TjMax for the CPU is 100\u00b0C and the current temperature of the core is 85\u00b0C, the \"Distance to TjMax\" would be 15\u00b0C. This is a crucial parameter for understanding thermal performance and ensuring that the CPU operates within safe thermal limits.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "3cd1ad336bb748de94376ea154ca84a8",
+                        "name": "WMI Intel Core i7-9750H CPU Core #1 Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #1 Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ec4b51f3d6244db586955797447d8bb8",
+                        "name": "WMI Intel Core i7-9750H CPU Core #2 Distance to TjMax Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #2 Distance to TjMax'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #2 Distance to TjMax Temp in \u00b0F. \n\nTjMax: This is the maximum safe thermal junction temperature specified by the manufacturer. If the CPU's temperature reaches this value, the CPU will typically begin thermal throttling to prevent damage, by reducing power consumption and therefore its heat output. This may involve lowering the CPU frequency, reducing voltage, or even shutting down the system in extreme cases to prevent overheating.\n\nDistance to TjMax: This value indicates how close the CPU core is to reaching its TjMax. It's essentially a buffer or headroom until the CPU reaches its thermal limit. For example, if the TjMax for the CPU is 100\u00b0C and the current temperature of the core is 85\u00b0C, the \"Distance to TjMax\" would be 15\u00b0C. This is a crucial parameter for understanding thermal performance and ensuring that the CPU operates within safe thermal limits.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a835f415ba2e4298a7dad6f933cacb6e",
+                        "name": "WMI Intel Core i7-9750H CPU Core #2 Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #2 Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "66111d97ecb64510a88437117c3e785e",
+                        "name": "WMI Intel Core i7-9750H CPU Core #3 Distance to TjMax Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #3 Distance to TjMax'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #3 Distance to TjMax Temp in \u00b0F. \n\nTjMax: This is the maximum safe thermal junction temperature specified by the manufacturer. If the CPU's temperature reaches this value, the CPU will typically begin thermal throttling to prevent damage, by reducing power consumption and therefore its heat output. This may involve lowering the CPU frequency, reducing voltage, or even shutting down the system in extreme cases to prevent overheating.\n\nDistance to TjMax: This value indicates how close the CPU core is to reaching its TjMax. It's essentially a buffer or headroom until the CPU reaches its thermal limit. For example, if the TjMax for the CPU is 100\u00b0C and the current temperature of the core is 85\u00b0C, the \"Distance to TjMax\" would be 15\u00b0C. This is a crucial parameter for understanding thermal performance and ensuring that the CPU operates within safe thermal limits.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "3eb6602f189a487fb4d9a2a8473b9487",
+                        "name": "WMI Intel Core i7-9750H CPU Core #3 Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #3'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #3 Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0958ee82cf1a435ebdebe5619de7e1ad",
+                        "name": "WMI Intel Core i7-9750H CPU Core #4 Distance to TjMax Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #4 Distance to TjMax'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #4 Distance to TjMax Temp in \u00b0F. \n\nTjMax: This is the maximum safe thermal junction temperature specified by the manufacturer. If the CPU's temperature reaches this value, the CPU will typically begin thermal throttling to prevent damage, by reducing power consumption and therefore its heat output. This may involve lowering the CPU frequency, reducing voltage, or even shutting down the system in extreme cases to prevent overheating.\n\nDistance to TjMax: This value indicates how close the CPU core is to reaching its TjMax. It's essentially a buffer or headroom until the CPU reaches its thermal limit. For example, if the TjMax for the CPU is 100\u00b0C and the current temperature of the core is 85\u00b0C, the \"Distance to TjMax\" would be 15\u00b0C. This is a crucial parameter for understanding thermal performance and ensuring that the CPU operates within safe thermal limits.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "fc0d28e2ae5b474791a5570abdf03eba",
+                        "name": "WMI Intel Core i7-9750H CPU Core #4 Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #4'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #4 Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f42b8281fe534e3392148a36dccedfa7",
+                        "name": "WMI Intel Core i7-9750H CPU Core #5 Distance to TjMax Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #5 Distance to TjMax'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #5 Distance to TjMax Temp in \u00b0F. \n\nTjMax: This is the maximum safe thermal junction temperature specified by the manufacturer. If the CPU's temperature reaches this value, the CPU will typically begin thermal throttling to prevent damage, by reducing power consumption and therefore its heat output. This may involve lowering the CPU frequency, reducing voltage, or even shutting down the system in extreme cases to prevent overheating.\n\nDistance to TjMax: This value indicates how close the CPU core is to reaching its TjMax. It's essentially a buffer or headroom until the CPU reaches its thermal limit. For example, if the TjMax for the CPU is 100\u00b0C and the current temperature of the core is 85\u00b0C, the \"Distance to TjMax\" would be 15\u00b0C. This is a crucial parameter for understanding thermal performance and ensuring that the CPU operates within safe thermal limits.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7cd9479776574d2e8da6af2b02d07d6f",
+                        "name": "WMI Intel Core i7-9750H CPU Core #5 Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #5'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #5 Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "9b1cbbef3d5c47db819bdca315cf06a5",
+                        "name": "WMI Intel Core i7-9750H CPU Core #6 Distance to TjMax Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #6 Distance to TjMax'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #6 Distance to TjMax Temp in \u00b0F. \n\nTjMax: This is the maximum safe thermal junction temperature specified by the manufacturer. If the CPU's temperature reaches this value, the CPU will typically begin thermal throttling to prevent damage, by reducing power consumption and therefore its heat output. This may involve lowering the CPU frequency, reducing voltage, or even shutting down the system in extreme cases to prevent overheating.\n\nDistance to TjMax: This value indicates how close the CPU core is to reaching its TjMax. It's essentially a buffer or headroom until the CPU reaches its thermal limit. For example, if the TjMax for the CPU is 100\u00b0C and the current temperature of the core is 85\u00b0C, the \"Distance to TjMax\" would be 15\u00b0C. This is a crucial parameter for understanding thermal performance and ensuring that the CPU operates within safe thermal limits.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "609c27b5d1dd4575946ce3eb9e2adf37",
+                        "name": "WMI Intel Core i7-9750H CPU Core #6 Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Core #6'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Core #6 Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ce9cb1d6c7b94246b2eef1f341cfb504",
+                        "name": "WMI Intel Core i7-9750H CPU Package Temp",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='CPU Package'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor on CPU Package Temp in \u00b0F",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "262d5637410f48ab83c244bcdff3d599",
+                        "name": "WMI Temp NVIDIA GPU Core",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='GPU Core'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor for GPU Core Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cd8439acce7f4c92a42ff9eba71fef3d",
+                        "name": "WMI Temp NVIDIA GPU Hot Spot",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Temperature' AND name='GPU Hot Spot'\"]",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "description": "Collects data from LibreHardwareMonitor for GPU Hot Spot Temp in \u00b0F.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value) * 1.8 + 32;\n"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5a23e3119db54cc6a7d11d1c483a8801",
+                        "name": "WMI Throughput NVIDIA GPU PCIe Rx",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Throughput' AND Parent='/gpu-nvidia/0' AND Name='GPU PCIe Rx'\"]",
+                        "value_type": "FLOAT",
+                        "units": "KB/s",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of NVIDIA GPU PCIe Rx Throughput in KB/s.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "9b33772e090d491bb7ba1c86b8d33456",
+                        "name": "WMI Throughput NVIDIA GPU PCIe Tx",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Throughput' AND Parent='/gpu-nvidia/0' AND Name='GPU PCIe Tx'\"]",
+                        "value_type": "FLOAT",
+                        "units": "KB/s",
+                        "description": "Collects data from LibreHardwareMonitor for the Data of NVIDIA GPU PCIe Tx Throughput in KB/s.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7e008ac90f0a4b0698b57cf6bb031b64",
+                        "name": "WMI AMD Ryzen 7 6800H Core #1 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #1 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a6093b35ba0b4051bf35166ca82eb79b",
+                        "name": "WMI AMD Ryzen 7 6800H Core #2 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #2 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "df32e4bb200041cc8a487308fc055c6a",
+                        "name": "WMI AMD Ryzen 7 6800H Core #3 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #3 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0c5cbc839a8a4255add110c01bab8e5c",
+                        "name": "WMI AMD Ryzen 7 6800H Core #4 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #4 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0eefa344958c4535b3ee75ee741f9c7a",
+                        "name": "WMI AMD Ryzen 7 6800H Core #5 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #5 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a0167ade5aa346d3b9fefc22256d45b4",
+                        "name": "WMI AMD Ryzen 7 6800H Core #6 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #6 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "83f2ed042d6d477581f1ebe60b75ccdd",
+                        "name": "WMI AMD Ryzen 7 6800H Core #8 VID Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='Core #8 VID'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core shows the voltage level the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "98b14c386c9f498eb9eab26ecd909457",
+                        "name": "WMI AMD Ryzen 7 6800H Core (SVI2 TFN) Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' and Name='Core (SVI2 TFN)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Collects data from LibreHardwareMonitor on the AMD Ryzen CPU Core Voltage.\n\nCore (SVI2 TFN) & SoC (SVI2 TFN): Voltage supplied to the CPU cores and System on Chip (SoC), respectively. This can indicate power delivery stability.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "1fc4b9f548b24d13aaef35d20a11a816",
+                        "name": "WMI Intel Core i7-9750H CPU Core #1 Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core #1'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X : Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b00bcc5375af41cbb3b99d0cdfa3ef24",
+                        "name": "WMI Intel Core i7-9750H CPU Core #2 Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core #2'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X: Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "9e5dd6d2c69b406f922e3eb331787020",
+                        "name": "WMI Intel Core i7-9750H CPU Core #3 Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core #3'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X: Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "47d11a1db7d244fab10d79738eb7d893",
+                        "name": "WMI Intel Core i7-9750H CPU Core #4 Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core #4'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X: Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "73bdd0a912d94b85a117c672c4144e67",
+                        "name": "WMI Intel Core i7-9750H CPU Core #5 Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core #5'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "447873cf8ed94cb893febe95f8c4a85d",
+                        "name": "WMI Intel Core i7-9750H CPU Core #6 Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core #6'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c6e33bbd4b9d460d8b68fc180393ba82",
+                        "name": "WMI Intel Core i7-9750H CPU Core Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' AND name='CPU Core'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Core #X VID: Voltage identification digital for each core, showing the voltage level that the CPU requests for stable operation under different loads.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5bef5b56d3f5496dbccaea5045e3bdb4",
+                        "name": "WMI AMD Ryzen 7 6800H SoC (SVI2 TFN) Voltage",
+                        "key": "wmi.get[Root\\LibreHardwareMonitor,\"SELECT Value FROM Sensor WHERE SensorType='Voltage' and Name='SoC (SVI2 TFN)'\"]",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "description": "Collects data from LibreHardwareMonitor on the AMD Ryzen CPU Core Voltage.\n\nCore (SVI2 TFN) & SoC (SVI2 TFN): Voltage supplied to the CPU cores and System on Chip (SoC), respectively. This can indicate power delivery stability.",
+                        "preprocessing": [
+                            {
+                                "type": "JAVASCRIPT",
+                                "parameters": [
+                                    "return  parseFloat(value);"
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Component",
+                                "value": "system"
+                            },
+                            {
+                                "tag": "wmi",
+                                "value": "api"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
